@@ -191,6 +191,7 @@ body {
 .sb-page {
   display: flex;
   min-height: 340px;
+  height: 340px;
 }
 
 .sb-image-side {
@@ -201,6 +202,8 @@ body {
   justify-content: center;
   border-right: 1px solid #f0e0cc;
   flex-shrink: 0;
+  height: 340px;
+  overflow: hidden;
 }
 
 .sb-image-side img {
@@ -225,6 +228,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 340px;
+  overflow-y: auto;
 }
 
 .sb-page-label {
@@ -256,6 +261,8 @@ body {
   padding: 16px 24px;
   border-top: 1px solid #f5eadc;
   background: #fffaf5;
+  position: sticky;
+  bottom: 0;
 }
 
 .sb-nav-btn {
@@ -322,4 +329,53 @@ body {
 .reset-btn:hover {
   border-color: #e07b2a;
   color: #e07b2a;
+}
+
+.narration-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.narration-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.narration-btn.play {
+  background: linear-gradient(135deg, #e07b2a, #c05a10);
+  color: white;
+}
+
+.narration-btn.pause {
+  background: #f5eadc;
+  color: #8a6a4a;
+  border: 1.5px solid #edd9c0;
+}
+
+.narration-btn.stop {
+  background: #fdf0dc;
+  color: #c05a10;
+  border: 1.5px solid #edd9c0;
+}
+
+.narration-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.narration-bar {
+  display: flex;
+  gap: 10px;
+  padding: 12px 24px;
+  background: #fff8f0;
+  border-top: 1px solid #f5eadc;
+  justify-content: center;
 }
