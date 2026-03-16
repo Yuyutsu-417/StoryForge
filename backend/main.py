@@ -25,9 +25,13 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://storyforge-production-fb81.up.railway.app",
+        "*"],
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],
 )
 
 class StoryRequest(BaseModel):
@@ -63,7 +67,7 @@ def generate_story_text(req: StoryRequest):
                 {"role": "user", "content": build_prompt(req)}
             ],
             "temperature": 0.9,
-            "max_tokens": 1300,
+            "max_tokens": 1200,
         }
     )
     data = response.json()
