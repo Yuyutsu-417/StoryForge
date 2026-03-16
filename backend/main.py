@@ -67,7 +67,7 @@ def generate_story_text(req: StoryRequest):
                 {"role": "user", "content": build_prompt(req)}
             ],
             "temperature": 0.9,
-            "max_tokens": 1200,
+            "max_tokens": 1000,
         }
     )
     data = response.json()
